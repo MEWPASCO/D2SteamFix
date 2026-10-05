@@ -19,7 +19,7 @@
 "C:\Program Files (x86)\Steam\steamapps\common\Destiny 2\steamfix.exe" %command%
 ```
 
-![Steam Launch Options](<img width="842" height="601" alt="image" src="https://github.com/user-attachments/assets/f0714d52-b00f-4794-b6af-51525413f8d3" />)
+![Steam Launch Options](<img width="842" height="601" alt="image" src="https://github.com/user-attachments/assets/3a0f7f0c-7f28-459d-80e8-197a4955f9ce" />)
 
 ---
 
