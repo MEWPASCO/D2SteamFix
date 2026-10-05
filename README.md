@@ -49,9 +49,22 @@ If your Windows Defender still reports the old detection, [please follow these i
 
 ## Steam Overlay
 
-If it breaks for other games after closing Destiny
+If the Overlay breaks for other games after closing Destiny
 
 1. Close Steam / Games / Steamfix
 2. Delete ```GameOverlayRenderer64.dll``` and ```GameOverlayRenderer.dll``` from the Steam folder
 
 Everything should work as normal when re-opening Steam afterwards!
+
+## "The requested operation requires elevation" - Error Message
+
+(Possible fix - needs proper testing!)
+
+1. Close Steam / Games / Steamfix
+2. Open the properties of ```destiny2.exe``` and ```destiny2launcher.exe``` by right-clicking both files
+3. Toggle the option ```Run as Administrator``` on both to ```OFF```
+
+## "D2SteamFix failed during ACL recovery" - Error Message
+
+1. Close Steam / Games / Steamfix
+2. Delete ```steamfix.dat``` and ```steamfix.dat.old``` from the game folder - it can happen that only one is present, which is completely fine, just proceed to delete that one then
