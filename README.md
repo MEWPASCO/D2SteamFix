@@ -46,3 +46,12 @@ make.cmd build
 The published binary may be flagged as a false positive by Windows Defender. This is a known issue and Microsoft has confirmed that it was a false positive and has removed it.
 
 If your Windows Defender still reports the old detection, [please follow these instructions to clear cached detections and update malware definitions.](docs/WINDOWS_DEFENDER.md)
+
+## Steam Overlay
+
+If it breaks for other games after closing Destiny
+
+1. Close Steam / Games / Steamfix
+2. Delete ```GameOverlayRenderer64.dll``` and ```GameOverlayRenderer.dll``` from the Steam folder
+
+Everything should work as normal when re-opening Steam afterwards!
