@@ -5,6 +5,10 @@
 > [!NOTE]
 > Blocking the Steam Overlay DLLs can affect overlay-dependent features such as Steam Input, notifications, Game Recording, and Remote Play. This program temporarily changes only the ACL metadata of the overlay DLLs; it does not alter their contents, inject code, inspect process memory, modify game files, change Steam configuration, or bypass BattlEye.
 
+> [!IMPORTANT]
+> This is a fork originating from [d2checkpoint-com/D2SteamFix](https://github.com/d2checkpoint-com/D2SteamFix)
+> It is independently maintained and hosted here to ensure long-term availability, with occasional updates and maintenance as needed.
+
 ---
 
 ## Installation
