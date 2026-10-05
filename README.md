@@ -1,3 +1,5 @@
+[discord]: https://discord.gg/avia
+
 # D2SteamFix
 
 **D2SteamFix** is a launch wrapper for *Destiny 2* designed to help alleviate frame pacing and stuttering issues for Steam users. Before starting the game, it temporarily denies execute access to Steam's overlay renderer DLLs, then restores the original permissions after exiting.
@@ -9,7 +11,7 @@
 > This is a fork originating from [d2checkpoint-com/D2SteamFix](https://github.com/d2checkpoint-com/D2SteamFix).
 > It is independently maintained and hosted here to ensure long-term availability, with occasional updates and maintenance as needed.
 
-Join our community for more support and other *Destiny 2* content like archives, guides, and more!
+Come hang out in our community for support, **Destiny 2** guides, archives, and more!
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)][discord]
 
