@@ -1,70 +1,73 @@
 # D2SteamFix
 
-D2SteamFix is a launch wrapper for Destiny 2 intended to help alleviate frame pacing and stuttering issues for Steam users. Before starting Destiny 2, it temporarily denies execute access to Steam's overlay renderer DLLs, then restores the original permissions after exiting the game.
+**D2SteamFix** is a launch wrapper for *Destiny 2* designed to help alleviate frame pacing and stuttering issues for Steam users. Before starting the game, it temporarily denies execute access to Steam's overlay renderer DLLs, then restores the original permissions after exiting.
 
-Please note that blocking the Steam Overlay DLLs can also affect overlay-dependent features such as Steam Input, notifications, Game Recording, and Remote Play. This program temporarily changes only the ACL metadata of the overlay DLLs; it does not alter their contents. It does not inject code, inspect process memory, modify game files, change Steam configuration, or bypass BattlEye.
+> [!NOTE]
+> Blocking the Steam Overlay DLLs can affect overlay-dependent features such as Steam Input, notifications, Game Recording, and Remote Play. This program temporarily changes only the ACL metadata of the overlay DLLs; it does not alter their contents, inject code, inspect process memory, modify game files, change Steam configuration, or bypass BattlEye.
+
+---
 
 ## Installation
 
-Download [steamfix.exe](https://pkg.d2checkpoint.com/D2SteamFix/steamfix.exe) and place it directly in your game's directory.
-
-Then, open Destiny 2's launch options in Steam:
-
-1. In Steam right-click **Destiny 2** in your library and select **Properties**.
-2. Find the **Launch Options** field under the **General** tab and paste the command below.
-
-```text
-"C:\path\to\Destiny 2\steamfix.exe" %command%
-```
-
-Replace `C:\path\to\Destiny 2` with the actual location of your Destiny 2 installation. The example path below is for a default Steam installation; if your game is on another drive, use that drive letter and the complete path instead:
+1. Download [steamfix.exe](https://pkg.d2checkpoint.com/D2SteamFix/steamfix.exe) and place it directly in your *Destiny 2* game directory.
+2. Open *Destiny 2*'s launch options in Steam:
+   * Right-click **Destiny 2** in your Steam library and select **Properties**.
+   * Find the **Launch Options** field under the **General** tab.
+3. Paste the following command (adjusting the path to match your actual installation directory):
 
 ```text
 "C:\Program Files (x86)\Steam\steamapps\common\Destiny 2\steamfix.exe" %command%
 ```
 
-![Steam Launch Options](https://static.d2checkpoint.com/steamfix_launch_options.png)
+![Steam Launch Options](<img width="842" height="601" alt="image" src="https://github.com/user-attachments/assets/f0714d52-b00f-4794-b6af-51525413f8d3" />)
+
+---
+
+## Troubleshooting
+
+### Windows Defender False Positive
+
+The published binary may occasionally be flagged as a false positive by Windows Defender. Microsoft has confirmed this is a false positive and removed the detection signature. 
+
+If your system still reports the old detection, follow the instructions in the [Windows Defender Guide](docs/WINDOWS_DEFENDER.md) to clear cached detections and update malware definitions.
+
+### Steam Overlay Broken in Other Games
+
+If the overlay stops working for other games after closing *Destiny 2*:
+1. Completely close Steam, running games, and `SteamFix`.
+2. Delete `GameOverlayRenderer64.dll` and `GameOverlayRenderer.dll` from your main Steam installation folder.
+3. Restart Steam.
+
+<img width="1123" height="633" alt="image" src="https://github.com/user-attachments/assets/0ddc6143-b12b-45b0-b79b-6e337d39bc7e" />
+
+### Error: "The requested operation requires elevation"
+
+1. Completely close Steam, running games, and `steamfix`.
+2. Right-click `destiny2.exe` and `destiny2launcher.exe` and open their **Properties**.
+3. Under the Compatibility tab, toggle **Run this program as an administrator** to **OFF** for both files.
+
+<img width="405" height="548" alt="image" src="https://github.com/user-attachments/assets/fb797581-ab4c-46f0-8581-0d0b8cfb7da6" /> <img width="405" height="548" alt="image" src="https://github.com/user-attachments/assets/06e68c4e-d6b4-47ce-9ed0-6b2ed17946fb" />
+
+### Error: "D2SteamFix failed during ACL recovery"
+
+1. Completely close Steam, running games, and `steamfix`.
+2. Delete `steamfix.dat` and/or `steamfix.dat.old` from your *Destiny 2* game folder (whichever files are currently present).
+
+_No image present currently_
+
+---
 
 ## Building from Source
 
 ### Prerequisites
 
-Building D2SteamFix requires Windows and the Microsoft Visual C++ toolchain.
+Building D2SteamFix requires Windows and the Microsoft Visual C++ toolchain. Install either Visual Studio or Visual Studio Build Tools with the **Desktop development with C++** workload selected (ensure the MSVC compiler and Windows SDK are included).
 
-Install either Visual Studio or Visual Studio Build Tools with the Desktop development with C++ workload selected. Make sure to include the MSVC compiler and a Windows SDK. Run the following commands from a Visual Studio Developer command prompt:
+### Build Commands
+
+Run the following commands from a Visual Studio Developer Command Prompt:
 
 ```batch
 make.cmd configure
-```
-
-```batch
 make.cmd build
 ```
-
-## Windows Defender
-
-The published binary may be flagged as a false positive by Windows Defender. This is a known issue and Microsoft has confirmed that it was a false positive and has removed it.
-
-If your Windows Defender still reports the old detection, [please follow these instructions to clear cached detections and update malware definitions.](docs/WINDOWS_DEFENDER.md)
-
-## Steam Overlay
-
-If the Overlay breaks for other games after closing Destiny
-
-1. Close Steam / Games / Steamfix
-2. Delete ```GameOverlayRenderer64.dll``` and ```GameOverlayRenderer.dll``` from the Steam folder
-
-Everything should work as normal when re-opening Steam afterwards!
-
-## "The requested operation requires elevation" - Error Message
-
-(Possible fix - needs proper testing!)
-
-1. Close Steam / Games / Steamfix
-2. Open the properties of ```destiny2.exe``` and ```destiny2launcher.exe``` by right-clicking both files
-3. Toggle the option ```Run as Administrator``` on both to ```OFF```
-
-## "D2SteamFix failed during ACL recovery" - Error Message
-
-1. Close Steam / Games / Steamfix
-2. Delete ```steamfix.dat``` and ```steamfix.dat.old``` from the game folder - it can happen that only one is present, which is completely fine, just proceed to delete that one then
