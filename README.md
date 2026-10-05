@@ -9,6 +9,10 @@
 > This is a fork originating from [d2checkpoint-com/D2SteamFix](https://github.com/d2checkpoint-com/D2SteamFix).
 > It is independently maintained and hosted here to ensure long-term availability, with occasional updates and maintenance as needed.
 
+Join our community for more support and other *Destiny 2* content like archives, guides, and more!
+
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)][discord]
+
 ---
 
 ## Installation
