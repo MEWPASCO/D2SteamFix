@@ -13,7 +13,7 @@
 
 ## Installation
 
-1. Download [steamfix.exe](https://pkg.d2checkpoint.com/D2SteamFix/steamfix.exe) and place it directly in your *Destiny 2* game directory.
+1. Download [steamfix.exe](https://github.com/MEWPASCO/D2SteamFix/releases/tag/1stRelease) and place it directly in your *Destiny 2* game directory.
 2. Open *Destiny 2*'s launch options in Steam:
    * Right-click **Destiny 2** in your Steam library and select **Properties**.
    * Find the **Launch Options** field under the **General** tab.
@@ -46,7 +46,7 @@ If the overlay stops working for other games after closing *Destiny 2*:
 
 ### Error: "The requested operation requires elevation"
 
-1. Completely close Steam, running games, and `steamfix`.
+1. Completely close Steam, running games, and `SteamFix`.
 2. Right-click `destiny2.exe` and `destiny2launcher.exe` and open their **Properties**.
 3. Under the Compatibility tab, toggle **Run this program as an administrator** to **OFF** for both files.
 
@@ -54,7 +54,7 @@ If the overlay stops working for other games after closing *Destiny 2*:
 
 ### Error: "D2SteamFix failed during ACL recovery"
 
-1. Completely close Steam, running games, and `steamfix`.
+1. Completely close Steam, running games, and `SteamFix`.
 2. Delete `steamfix.dat` and/or `steamfix.dat.old` from your *Destiny 2* game folder (whichever files are currently present).
 
 _No image present currently_
